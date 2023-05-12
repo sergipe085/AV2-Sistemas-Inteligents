@@ -27,11 +27,10 @@ class adaline:
         return _inputs
 
     def train(self, x_treino, y_treino, max_epochs, learning_rate, precision):
-
         YTreino = y_treino
 
-
         j = 0
+        EQMs_list = []
         while  j < max_epochs:
             j += 1
             i = 0
@@ -71,11 +70,12 @@ class adaline:
                     finish = False
 
                 EQMs_anterior[h] = EQMs[h]
+            EQMs_list.append(EQMs)
             
             bp = 1
             if (finish == True): 
                 break
-
+        return EQMs_list
         bp = 2
 
     def get_output(self, X):

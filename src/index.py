@@ -4,6 +4,7 @@ from data_reader import get_data;
 from neuron import neuron
 from perceptron import perceptron
 from adaline import adaline
+import utils as ut
 
 XTreino, YTreino, XTeste, YTeste = get_data()
 
@@ -45,8 +46,11 @@ def execute_perceptron():
     bp = 3
 
 def execute_adaline():
+    print("---Iniciando a rede ADALINE---")
+
     ada = adaline(36, 5, binary_activation_function)
-    ada.train(XTreino, YTreino, 10, 0.01, 0.00000001)
+    _, training_time = ut.execution_time(lambda: ada.train(XTreino, YTreino, 10, 0.01, 0.000000001))
+    print(f"Tempo de treinamento: {training_time}")
 
     i = 0
     correct_count = 0
@@ -70,5 +74,9 @@ def execute_adaline():
         bp = 2
         i+=1
 
+    acuracia = correct_count * 100 / total
     print(f"Acuracia: {correct_count * 100/total}")
+    return acuracia
+
+execute_adaline()
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
