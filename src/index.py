@@ -1,7 +1,6 @@
-import numpy as np 
+import numpy as np
 import matplotlib.pyplot as plt
 from data_reader import get_data;
-from neuron import neuron
 from perceptron import perceptron
 from adaline import adaline
 import utils as ut
@@ -77,6 +76,4 @@ def execute_adaline():
     acuracia = correct_count * 100 / total
     print(f"Acuracia: {correct_count * 100/total}")
     return acuracia
-
-execute_adaline()
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+   
